@@ -64,6 +64,10 @@ jobs:
         run: yarn typecheck
 
   test-node:
+    permissions:
+      contents: read # to fetch code (actions/checkout)
+      id-token: write # to let codecov authenticate this job
+
     name:
       # prettier-ignore
       Test on Node.js v${{ matrix.node-version }}, eslint v${{ matrix.eslint-version }}, and ts-eslint/plugin v${{ matrix.ts-eslint-plugin-version }}
@@ -111,6 +115,8 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
+          use_oidc: true
+
   test-ubuntu:
     uses: ./.github/workflows/test.yml
     needs: prepare-yarn-cache-ubuntu
