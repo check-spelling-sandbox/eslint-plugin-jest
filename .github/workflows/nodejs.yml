@@ -105,7 +105,7 @@ jobs:
         run: yarn test --coverage ${{ matrix.eslint-version == 8 }}
         env:
           CI: true
-      - uses: codecov/codecov-action@v4
+      - uses: check-spelling-sandbox/codecov-action@my-repo-is-a-fork
         if: ${{ matrix.eslint-version >= 8 }}
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
