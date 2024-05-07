@@ -111,6 +111,7 @@ jobs:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: true
           use_oidc: true
+          verbose: true
 
   test-ubuntu:
     uses: ./.github/workflows/test.yml
