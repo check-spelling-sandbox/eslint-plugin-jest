@@ -1,4 +1,3 @@
-
 <div align="center">
   <a href="https://eslint.org/">
     <img height="150" src="https://eslint.org/assets/images/logo/eslint-logo-color.svg">
